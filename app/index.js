@@ -41,9 +41,10 @@ var NodeCsGenerator = yeoman.generators.Base.extend({
     this.pkg = require('../package.json');
 
     this.on('end', function () {
-      if (!this.options['skip-install']) {
-        this.installDependencies();
-      }
+      this.installDependencies({
+        bower: false,
+        skipInstall: this.options['skip-install']
+      });
     });
   },
 
