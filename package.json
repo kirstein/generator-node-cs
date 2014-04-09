@@ -2,6 +2,11 @@
   "name": "generator-node-cs",
   "version": "0.1.1",
   "description": "Node coffeescript generator",
+  "keywords": [
+    "yeoman-generator",
+    "coffeescript",
+    "mocha"
+  ],
   "license": "MIT",
   "main": "app/index.js",
   "repository": "kirstein/generator-node-cs",
