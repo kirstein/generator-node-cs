@@ -1,0 +1,37 @@
+{
+  "name": "generator-node-cs",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "kirstein/generator-node-cs",
+  "author": {
+    "name": "Mikk Kirstein",
+    "email": "mikk@kolmas.org",
+    "url": "https://github.com/kirstein"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0",
+    "github": "^0.1.15",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}

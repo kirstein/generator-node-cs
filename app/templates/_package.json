@@ -1,0 +1,39 @@
+{
+  "name": "<%= slugName %>",
+  "version": "0.0.0",
+  "description": "<%= description %>",
+  "homepage": "<%= githubUrl %>/<%= slugName %>",
+  "repository": {
+    "type": "git",
+    "url": "<%= githubUrl %>/<%= slugName %>.git"
+  },
+  "scripts": {
+    "test" : "grunt test"
+  },
+  "config": {
+    "blanket": {
+      "loader": "./node-loaders/coffee-script",
+      "data-cover-only": [ "src" ],
+      "data-cover-never": "node_modules"
+    }
+  },
+  "main": "./dist/<%= slugName %>",
+  "author": {
+    "name": "<%= realname %>",
+    "email": "<%= email %>",
+    "url": "<%= githubUrl %>"
+  },
+  "license": "<%= licence %>",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-mocha-cov": "^0.2.1",
+    "should": "^3.2.0-beta1",
+    "grunt-contrib-coffee": "^0.10.1",
+    "blanket": "^1.1.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "coffee-script": "~1.7.1",
+    "grunt-contrib-clean": "^0.5.0"
+  },
+  "dependencies": {}
+}
