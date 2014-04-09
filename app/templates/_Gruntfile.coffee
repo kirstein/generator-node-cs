@@ -6,16 +6,19 @@ module.exports = (grunt) ->
   ###
   # tasks
   ###
-  grunt.registerTask 'test',    [ 'mochacov:spec' ]
+  grunt.registerTask 'lint',    [ 'coffeelint' ]
+  grunt.registerTask 'test',    [ 'mochacov:spec', 'lint' ]
   grunt.registerTask 'cov',     [ 'mochacov:cov' ]
   grunt.registerTask 'default', [ 'test' ]
-  grunt.registerTask 'build',   [ 'clean', 'coffee:dist' ]
+  grunt.registerTask 'build',   [ 'test', 'clean', 'coffee:dist' ]
 
   ###
   # config
   ###
   grunt.initConfig
-    # Coverage tests
+
+    # Tests and coverage tests
+    # When running cov you will need to pipe your output
     mochacov :
       travis :
         options : coveralls : serviceName : 'travis-ci'
@@ -29,20 +32,30 @@ module.exports = (grunt) ->
         require   : [ 'should' ]
         growl     : true
         ui        : 'tdd'
+        bail      : true # Fail fast
+
+    # Lint our coffee files
+    # Linting is unobtrusive. If linting errors happen then they wont break the process
+    coffeelint:
+      options:
+        force: true # Display lint errors as warnings. Do not break.
+        configFile: 'coffeelint.json'
+      files: [ 'test/**/*.coffee', 'src/**/*.coffee' ]
+
 
     # Watch for file changes.
     watch:
       lib:
         files : [ '**/*.coffee' ]
         tasks : [ 'test' ]
-        options :
-          nospawn : true
+        options : nospawn : true
 
+    # Clear the contents of a directory
     clean: [ 'dist']
 
+    # Deal with coffeescript concatenation and compiling
     coffee:
-      options:
-        join: true
+      options: join: true
       dist:
         files:
           'dist/<%= slugName %>.js' : 'src/**/*.coffee'
