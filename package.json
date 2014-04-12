@@ -1,6 +1,6 @@
 {
   "name": "generator-node-cs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Node coffeescript generator",
   "keywords": [
     "yeoman-generator",
