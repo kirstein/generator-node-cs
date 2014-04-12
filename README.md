@@ -10,6 +10,7 @@
      * linting
      * watchers
      * building
+     * version bumps
 
    * Mocha
      * `should.js` by default

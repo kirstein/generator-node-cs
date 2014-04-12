@@ -53,6 +53,12 @@ module.exports = (grunt) ->
     # Clear the contents of a directory
     clean: [ 'dist']
 
+    # Bump the version and build the tags
+    bump:
+      options:
+        files: [ 'package.json' ]
+        commit: false
+
     # Deal with coffeescript concatenation and compiling
     coffee:
       options: join: true
