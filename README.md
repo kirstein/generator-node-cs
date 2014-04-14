@@ -52,6 +52,11 @@ Building coffeescript to js
   $ grunt build
 ```
 
+Bump the version
+```bash
+  $ grunt bump
+```
+
 Linting your coffeescript (by rules defined in coffeelint.json)  
 ```bash
   $ grunt lint
