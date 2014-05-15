@@ -56,8 +56,9 @@ module.exports = (grunt) ->
     # Bump the version and build the tags
     bump:
       options:
-        files: [ 'package.json' ]
-        commit: false
+        files  : [ 'package.json' ]
+        commit : false
+        push   : false
 
     # Deal with coffeescript concatenation and compiling
     coffee:
