@@ -30,7 +30,7 @@ To install _generator-node-cs_, run:
 
 Initialize the generator:
 ```bash
-  $ yo generator-node-cs
+  $ yo node-cs
 ```
 
 Start hacking!
